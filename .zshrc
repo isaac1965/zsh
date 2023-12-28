@@ -9,9 +9,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
-DEFAULT_USER=isaac27 
+DEFAULT_USER=isaac
 prompt_context(){}
-
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -38,7 +37,7 @@ prompt_context(){}
 # DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+ #DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
  DISABLE_AUTO_TITLE="true"
@@ -73,21 +72,16 @@ prompt_context(){}
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode )
+plugins=(git vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-
-source ~/.zplug/init.zsh
-zplug "IngoMeyer441/zsh-easy-motion"
-bindkey -M vicmd ' '  vi-easy-motion
-EASY_MOTION_TARGET_KEYS="asdghklqwertyuiopzxcvbnmfj;"
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
- export LANG=en_US.UTF-8
+# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -107,12 +101,13 @@ EASY_MOTION_TARGET_KEYS="asdghklqwertyuiopzxcvbnmfj;"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
- alias ls="lsd -alh"
+ alias ls="lsd -alh" 
  alias cat="bat"
+ alias t="tree"
 
-function zle-line-init zle-keymap-select {
+ function zle-line-init zle-keymap-select {
   if [ $KEYMAP = vicmd  ]; then
-    echo -ne "\033]12;#01dcf6\x7\e[2 q"
+    echo -ne "\033]12;#00ffff\x7\e[2 q"
   else
     # the insert mode for vi
     echo -ne "\033]12;#a1f601\x7\e[6 q"
@@ -124,6 +119,7 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 bindkey -M viins 'jj' vi-cmd-mode
 
+fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
