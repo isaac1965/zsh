@@ -136,7 +136,10 @@ alias cat="bat"
 alias t="tree"
 # alias f='file=$(find ~/ -type f | fzf); [ -n "$file" ] && vim "$file"'
 alias f='find ~/ -type f | fzf --bind "enter:become(nvim {}),ctrl-e:become(vim {})"'
-
+# alias gt="git status"
+# alias ga="git add ."
+# alias gi="git init"
+# alias gp="git push -u origin master"
 
 #  ┌─┐┬ ┬┌┬┐┌─┐  ┌─┐┌┬┐┌─┐┬─┐┌┬┐
 #  ├─┤│ │ │ │ │  └─┐ │ ├─┤├┬┘ │ 
@@ -168,3 +171,7 @@ bindkey -M viins 'jj' vi-cmd-mode
 # └─┘┴ ┴└─┘ ┴    ┴ ┴└─┘ ┴ ┴└─┘┘└┘   └─┘└─┘┴ ┴
 
 bindkey -M vicmd ' ' vi-easy-motion
+
+# charge maps of fzf 
+eval "$(fzf --zsh)" 
+
