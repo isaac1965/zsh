@@ -175,3 +175,4 @@ bindkey -M vicmd ' ' vi-easy-motion
 # charge maps of fzf 
 eval "$(fzf --zsh)" 
 
+source /usr/share/nvm/init-nvm.sh
