@@ -128,18 +128,13 @@ alias vm-off="sudo systemctl stop libvirtd.service"
 
 alias musica="ncmpcpp"
 
-alias ls='lsd -a --group-directories-first'
-alias ll='lsd -la --group-directories-first'
-
-alias ls="lsd -alh" 
-alias cat="bat"
-alias t="tree"
+alias cat="bat --theme=base16"
+alias ls='eza --icons=always --color=always -a'
+alias ll='eza --icons=always --color=always -la'
+alias tree="eza -T"
 # alias f='file=$(find ~/ -type f | fzf); [ -n "$file" ] && vim "$file"'
 alias f='find ~/ -type f | fzf --bind "enter:become(nvim {}),ctrl-e:become(vim {})"'
-# alias gt="git status"
-# alias ga="git add ."
-# alias gi="git init"
-# alias gp="git push -u origin master"
+
 
 #  ┌─┐┬ ┬┌┬┐┌─┐  ┌─┐┌┬┐┌─┐┬─┐┌┬┐
 #  ├─┤│ │ │ │ │  └─┐ │ ├─┤├┬┘ │ 
