@@ -168,6 +168,9 @@ bindkey -M viins 'jj' vi-cmd-mode
 bindkey -M vicmd ' ' vi-easy-motion
 
 # charge maps of fzf 
-eval "$(fzf --zsh)" 
+eval "$(fzf --zsh)"
+
+# FZF scrolling with the j" and 'k" keys
+export FZF_DEFAULT_OPTS="--bind=j:down,k:up"
 
 source /usr/share/nvm/init-nvm.sh
