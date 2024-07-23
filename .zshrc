@@ -134,6 +134,7 @@ alias ll='eza --icons=always --color=always -la'
 alias tree="eza -T"
 # alias f='file=$(find ~/ -type f | fzf); [ -n "$file" ] && vim "$file"'
 alias f='find ~/ -type f | fzf --bind "enter:become(nvim {}),ctrl-e:become(vim {})"'
+alias df='df -h -x tmpfs -x devtmpfs -x efivarfs'
 
 
 #  ┌─┐┬ ┬┌┬┐┌─┐  ┌─┐┌┬┐┌─┐┬─┐┌┬┐
