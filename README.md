@@ -4,3 +4,25 @@
 ```sh
 sudo apt install zsh
 ```
+
+### paru -S zsh-vi-mode
+```sh
+# ┬  ┬┬   ┌┬┐┌─┐┌┬┐┌─┐  ┌─┐┌─┐┌┐┌┌─┐┬┌─┐
+# └┐┌┘│───││││ │ ││├┤   │  │ ││││├┤ ││ ┬
+#  └┘ ┴   ┴ ┴└─┘─┴┘└─┘  └─┘└─┘┘└┘└  ┴└─┘
+
+function zle-line-init zle-keymap-select {
+  if [ $KEYMAP = vicmd  ]; then
+    echo -ne "\033]12;#00ffff\x7\e[2 q"
+  else
+    # the insert mode for vi
+    echo -ne "\033]12;#a1f601\x7\e[6 q"
+  fi
+  zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+bindkey -M viins 'jj' vi-cmd-mode
+
+```
