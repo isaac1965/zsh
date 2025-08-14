@@ -26,3 +26,7 @@ zle -N zle-keymap-select
 bindkey -M viins 'jj' vi-cmd-mode
 
 ```
+### PROMPT
+```sh
+PS1='%B%F{blue}%f%b  $(dir_icon)  %B%F{red}%~%f%b${vcs_info_msg_0_} %(?.%B%F{green}.%F{red})%f%b '
+```
