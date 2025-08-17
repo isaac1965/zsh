@@ -28,11 +28,11 @@ bindkey -M viins 'jj' vi-cmd-mode
 ```
 ### Con zsh zsh-vi-mode | paru -S zsh-vi-mode
 ```sh
- function zvm_config() {
+function zvm_config() {
    ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
    ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
  }
-
+function zvm_after_init() { echo -ne "\033]12;#a1f601\x7" }
 
 function zvm_after_select_vi_mode() {
   if [[ $ZVM_MODE == $ZVM_MODE_NORMAL ]]; then
