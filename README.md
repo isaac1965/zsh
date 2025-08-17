@@ -5,7 +5,7 @@
 sudo apt install zsh
 ```
 
-### paru -S zsh-vi-mode
+### Con oh-my-zsh
 ```sh
 # ┬  ┬┬   ┌┬┐┌─┐┌┬┐┌─┐  ┌─┐┌─┐┌┐┌┌─┐┬┌─┐
 # └┐┌┘│───││││ │ ││├┤   │  │ ││││├┤ ││ ┬
@@ -24,6 +24,23 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 bindkey -M viins 'jj' vi-cmd-mode
+
+```
+### Con zsh zsh-vi-mode | paru -S zsh-vi-mode
+```sh
+ function zvm_config() {
+   ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+   ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
+ }
+
+
+function zvm_after_select_vi_mode() {
+  if [[ $ZVM_MODE == $ZVM_MODE_NORMAL ]]; then
+    echo -ne "\033]12;#00ffff\x7" # cyan en normal
+  else
+    echo -ne "\033]12;#a1f601\x7" # verde en insert
+  fi
+}
 
 ```
 ### PROMPT
