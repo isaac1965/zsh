@@ -43,6 +43,18 @@ function zvm_after_select_vi_mode() {
 }
 
 ```
+### Pokemon-icat config
+```sh
+if [[ "$TERM" == "xterm-kitty" ]]; then
+    # Ejecutar pokemon-icat en Kitty
+    pokemon-icat --quiet 
+elif [[ "$TERM" == "alacritty" ]]; then
+    # Ejecutar colorscript en Alacritty
+    "$HOME/.local/bin/colorscript" -r
+else
+    echo "Terminal no soportado: $TERM"
+fi
+```
 ### PROMPT
 ```sh
 PS1='%B%F{blue}%f%b  $(dir_icon)  %B%F{red}%~%f%b${vcs_info_msg_0_} %(?.%B%F{green}.%F{red})%f%b '
