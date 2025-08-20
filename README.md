@@ -55,6 +55,10 @@ else
     echo "Terminal no soportado: $TERM"
 fi
 ```
+### Install "fd" paru -S fd fastest & efficient
+```sh
+# alias f='fd ~/ --type f | fzf --bind "enter:become(nvim {}),ctrl-e:become(vim {})"'
+```
 ### PROMPT
 ```sh
 PS1='%B%F{blue}%f%b  $(dir_icon)  %B%F{red}%~%f%b${vcs_info_msg_0_} %(?.%B%F{green}.%F{red})%f%b '
