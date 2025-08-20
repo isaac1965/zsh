@@ -55,9 +55,9 @@ else
     echo "Terminal no soportado: $TERM"
 fi
 ```
-### Install "fd" paru -S fd fastest & efficient
+### Install "fd" paru -S fd fastest & efficient that "find"
 ```sh
-# alias f='fd ~/ --type f | fzf --bind "enter:become(nvim {}),ctrl-e:become(vim {})"'
+ alias f='fd ~/ --type f | fzf --bind "enter:become(nvim {}),ctrl-e:become(vim {})"'
 ```
 ### PROMPT
 ```sh
