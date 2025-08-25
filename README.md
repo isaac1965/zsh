@@ -52,7 +52,7 @@ elif [[ "$TERM" == "alacritty" ]]; then
     # Ejecutar colorscript en Alacritty
     "$HOME/.local/bin/colorscript" -r
 else
-    echo "Terminal no soportado: $TERM"
+    # echo "Terminal no soportado: $TERM"
 fi
 ```
 ### Install "fd" paru -S fd fastest & efficient that "find"
