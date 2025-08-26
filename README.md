@@ -67,3 +67,5 @@ PS1='%B%F{blue}%f%b  $(dir_icon)  %B%F{red}%~%f%b${vcs_info_msg_0_} %(?.%B%F{
 ```sh
 source <(fzf --zsh)
 ```
+### Alias importante
+![important]
